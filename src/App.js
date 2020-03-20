@@ -4,28 +4,18 @@ import "./App.css";
 
 class App extends React.Component {
   state = {
-    name: "Juan"
+    monsters: [
+      { name: "Frankenstain", age: 100 },
+      { name: "Dracula", age: 1000 },
+      { name: "Zombie", age: 500 }
+    ]
   };
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            hello {this.state.name}
-          </a>
-          <button onClick={() => this.setState({ name: "Carlos" })}>
-            Change Name
-          </button>
-        </header>
+        {this.state.map(monster => (
+          <h1>{monster.name}</h1>
+        ))}
       </div>
     );
   }
