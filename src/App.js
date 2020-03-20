@@ -13,7 +13,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        {this.state.map(monster => (
+        {this.state.monsters.map(monster => (
           <h1>{monster.name}</h1>
         ))}
       </div>
